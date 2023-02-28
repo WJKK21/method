@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #menu {
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root')
+    // 문서 자체가 사라지지 않는다
+
+    const ElementMaker = {
+        tagName: '',
+        setAttriName: '',
+        setAttribValue: '',
+        parent: '',
+
+      maker: function () {
+        const element = document.createElement(this.tagName)
+        element.setAttribute(this.setAttriName, this.setAttribValue)
+        this.parent.appendChild(element);
+      },
+
+      loopFunc : function() {
+        for(let i = 0; i < 100; i++){
+          this.maker();
+        }
+      }
+
+    }
+    function ulMaker(tagName, setAttriName, setAttribValue, parent) {
+      const element = document.createElement(tagName)
+      // document 안에 있는 메서드 createElement
+      element.setAttribute(setAttriName, setAttribValue) 
+      //속성을 만들어줄거야
+      parent.appendChild(element)
+    }
+    for (let i = 0; i < 100; i++) {
+      ulMaker('header','id', `test-${i}`, root)
+    }
+    
+
+    
+    root.children[65].style.widht = '100px';
+    root.children[65].style.height = '100px';
+    root.children[65].style.backgroundColor= 'red';
+    // 루트의 몇번째 자식에 값을 준다 
+    const pick = root
+    console.dir(root
+    ) //콘솔에서 확인 
+
+</script>
+
+</body>
+</html>

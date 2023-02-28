@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const itsMe = {
+    }
+    
+    itsMe.name = 'im'
+    itsMe.age = 20,
+    itsMe.home = 'oracle'
+    itsMe.hosil = '305ho'
+    itsMe.sentence = '저는'+ itsMe +  '입니다'
+    itsMe.adult = function () {
+      if(itsMe.age <= 20){
+        console.log('나 성인 O')
+      } else {
+        console.log('나 성인 X')
+      }
+    }
+    
+    itsMe.nickName = function(){
+      this.name = 'ji'
+    }
+    
+    console.log(itsMe)
+    itsMe.nickName()
+    console.log(itsMe)
+    
+
+  </script>
+
+</body>
+</html>
